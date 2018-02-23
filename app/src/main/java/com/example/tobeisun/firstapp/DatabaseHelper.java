@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION=1 ;
     private static final String DATABASE_NAME="Registration.db" ;
     private static final String TABLE_NAME = "Registration" ;
-    private static final String COLUMN_ID="id" ;
+
     private static final String COLUMN_NAME ="Name" ;
     private static final String COLUMN_NUMBER
 ="Number" ;
@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USERNAME="Username" ;
     private static final String COLUMN_PASSORD ="Password";
     SQLiteDatabase db ;
-    private static final String TABLE_CREATE ="create table Registration (id integer primary key not null auto_increment," +"Name text not null ,Number text not null , Email text not null, Username text not null, Password text not null);";
+    private static final String TABLE_CREATE ="create table Registration (" +"Name text not null ,Number text not null , Email text not null, Username text not null, Password text not null);";
 
     public DatabaseHelper(Context context)
     {
@@ -51,7 +51,7 @@ this.onCreate(db);
         Cursor cursor =db.rawQuery(query,null) ;
         int count = cursor.getCount() ;
 
-        values.put(COLUMN_ID,count);
+
         values.put(COLUMN_NAME,c.getName());
         values.put(COLUMN_NUMBER,c.getNumber());
         values.put(COLUMN_Email,c.getEmail());
