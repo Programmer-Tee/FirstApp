@@ -22,33 +22,27 @@ public class Signup extends AppCompatActivity {
 
     }
 
-    public void Signup(View t)
-    {
-        if(t.getId()==R.id.button)
-        {
-            EditText name =(EditText) findViewById(R.id.editTextName) ;
-            EditText number =(EditText) findViewById(R.id.editTextNumber) ;
-            EditText Email =(EditText) findViewById(R.id.editTextEmail);
-            EditText username =(EditText) findViewById(R.id.editTextUname) ;
-            EditText password =(EditText) findViewById(R.id.editTextPword1);
-            EditText confirmpassword=(EditText) findViewById(R.id.editTextPword2) ;
+    public void Signup(View t) {
+        if (t.getId() == R.id.button) {
+            EditText name = (EditText) findViewById(R.id.editTextName);
+            EditText number = (EditText) findViewById(R.id.editTextNumber);
+            EditText Email = (EditText) findViewById(R.id.editTextEmail);
+            EditText username = (EditText) findViewById(R.id.editTextUname);
+            EditText password = (EditText) findViewById(R.id.editTextPword1);
+            EditText confirmpassword = (EditText) findViewById(R.id.editTextPword2);
 
 
-            String numberstr = number.getText().toString() ;
-            String Emailstr =Email.getText().toString();
-            String namestr = name.getText().toString() ;
-            String Usernamestr=username.getText().toString() ;
-            String passwordstr = password.getText().toString() ;
-            String confirmpasswordstr = confirmpassword.getText().toString() ;
+            String numberstr = number.getText().toString();
+            String Emailstr = Email.getText().toString();
+            String namestr = name.getText().toString();
+            String Usernamestr = username.getText().toString();
+            String passwordstr = password.getText().toString();
+            String confirmpasswordstr = confirmpassword.getText().toString();
 
-            if(!passwordstr.equals(confirmpasswordstr))
-            {
-                Toast.makeText(Signup.this,"passwords don't match",Toast.LENGTH_SHORT).show();
-            }
-
-            else
-            {
-                Database d = new Database() ;
+            if (!passwordstr.equals(confirmpasswordstr)) {
+                Toast.makeText(Signup.this, "passwords don't match", Toast.LENGTH_SHORT).show();
+            } else {
+                Database d = new Database();
                 d.setName(namestr);
                 d.setNumber(numberstr);
                 d.setEmail(Emailstr);
@@ -59,7 +53,17 @@ public class Signup extends AppCompatActivity {
 
 
             }
-
         }
     }
-}
+
+        public void showLoginPage (View t)
+        {
+            Intent intent = new Intent(Signup.this, Login.class);
+
+            startActivity(intent);
+
+
+        }
+
+        }
+
