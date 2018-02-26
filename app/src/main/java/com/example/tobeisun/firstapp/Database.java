@@ -5,7 +5,7 @@ package com.example.tobeisun.firstapp;
  */
 
 public class Database {
-    String Name ;String Number, Email,Username ,Password ;
+    int id;String Name ;String Number, Email,Username ,Password ;
 
     public void setName (String name)
     {
@@ -60,4 +60,11 @@ public class Database {
         return Password ;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
